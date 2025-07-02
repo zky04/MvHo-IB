@@ -1,6 +1,10 @@
 # MvHo-IB: Multi-View Higher-Order Information Bottleneck for Brain Disorder Diagnosis
 
+<div align="center">
+
 [English](README.md) | [中文](README_ch.md)
+
+</div>
 
 "MvHo-IB: Multi-View Higher-Order Information Bottleneck for Brain Disorder Diagnosis", MICCAI-25 的代码实现。
 
@@ -59,7 +63,7 @@ python main.py
 
 ![Brain3DCNN Architecture](images/3DBrainCNN.png)
 
-Brain3DCNN架构是一种专门设计，利用结构脑网络的拓扑局部性来增强$\mathcal{O}$-信息表示学习。这种分层设计捕获多尺度脑连接模式以实现准确的疾病诊断。
+Brain3DCNN架构是一种专门设计，利用结构脑网络的拓扑局部性来增强$\mathcal{O}$-information表示学习。这种分层设计捕获多尺度脑连接模式以实现准确的疾病诊断。
 
 ## 📁 项目结构
 
