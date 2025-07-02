@@ -1,12 +1,14 @@
 # MvHo-IB: Multi-View Higher-Order Information Bottleneck for Brain Disorder Diagnosis
 
+[English](README.md) | [中文](README_ch.md)
+
 Code for "MvHo-IB: Multi-View Higher-Order Information Bottleneck for Brain Disorder Diagnosis", MICCAI-25.
 
 ## 📋 Method Overview
 
 ![MvHo-IB Framework Overview](images/ovreview.png)
 
-Our MvHo-IB framework processes fMRI time series data extracted using the automated anatomical labeling (AAL) template. The pipeline estimates functional connectivity patterns and feeds them into a multi-view learning architecture. The framework learns a joint representation \(Z = f_{\theta}(Z_1, Z_2)\) by optimizing the information bottleneck objective: maximizing \(I(Y; Z)\) while minimizing \(I(X_1; Z_1) + I(X_2; Z_2)\). View 1 processes pairwise interactions through mutual information matrices, while View 2 captures higher-order triple interactions using \(\mathcal{O}\)-information 3D tensors.
+Our MvHo-IB framework processes fMRI time series data through a multi-view learning architecture. The pipeline estimates functional connectivity patterns and feeds them into dual processing paths. The framework learns a joint representation $Z = f_{\theta}(Z_1, Z_2)$ by optimizing the information bottleneck objective: maximizing $I(Y; Z)$ while minimizing $I(X_1; Z_1) + I(X_2; Z_2)$. View 1 processes pairwise interactions through mutual information matrices, while View 2 captures higher-order triple interactions using $\mathcal{O}$-information 3D tensors.
 
 ## 📊 Supported Datasets
 
@@ -57,7 +59,7 @@ python main.py
 
 ![Brain3DCNN Architecture](images/3DBrainCNN.png)
 
-The Brain3DCNN architecture processes brain network data through multiple specialized layers: E2E convolution for edge-level feature extraction, E2N filtering for region-wise aggregation, N2G layer for global integration, and fully connected layers for classification. This hierarchical design captures multi-scale brain connectivity patterns for accurate disorder diagnosis.
+The Brain3DCNN architecture is a specialized design that exploits the topological locality of structural brain networks to enhance $\mathcal{O}$-information representation learning. This hierarchical design captures multi-scale brain connectivity patterns for accurate disorder diagnosis.
 
 ## 📁 Project Structure
 
