@@ -1,0 +1,90 @@
+# MvHo-IB Configuration File
+# Multi-view higher-order information bottleneck for brain disorder diagnosis
+
+# Current dataset name (select from configured datasets below)
+dataset_name: "UCLA"
+
+# ============================================================================
+# Training hyperparameters configuration
+# ============================================================================
+training:
+  learning_rate: 1.0e-5          # Learning rate
+  weight_decay: 0.03             # Weight decay
+  num_epochs: 200                # Number of training epochs
+  batch_size: 8                  # Batch size
+  patience: 50                   # Early stopping patience
+  
+  # Model architecture parameters
+  gin_embedding_dim: 64          # GIN embedding dimension
+  cnn_embedding_dim: 64          # CNN embedding dimension
+  gin_hidden_dims: [128, 256, 512]  # GIN network hidden layer dimensions
+  cnn_channels: [32, 64]         # 3D CNN channel configuration
+  dropout_rate: 0.5              # Dropout rate
+
+# ============================================================================
+# Information bottleneck related parameters
+# ============================================================================
+information_bottleneck:
+  sigma: 5                       # Bandwidth parameter for Rényi entropy estimation
+  alpha: 1.01                    # Order of Rényi entropy
+  beta_gin: 0.001                # Information bottleneck regularization coefficient for GIN branch
+  beta_cnn: 0.01                 # Information bottleneck regularization coefficient for CNN branch
+  use_ib: true                   # Whether to use information bottleneck regularization
+
+# ============================================================================
+# Dataset configurations
+# ============================================================================
+datasets:
+  # UCLA dataset configuration (Schizophrenia study)
+  UCLA:
+    num_regions: 105
+    num_classes: 2
+    x1_path: "x1_ucla.pt"
+    x2_path: "x2_o_ucla.pt"
+    
+  # ADNI dataset configuration (Alzheimer's disease study)  
+  ADNI:
+    num_regions: 116
+    x1_path: "x1_adni.pt"
+    x2_path: "x2_o_adni.pt"
+    classification_mode: "binary_ad_mci"  # Options: "three_class" | "binary_ad_nc" | "binary_ad_mci" | "binary_mci_nc"
+    num_classes: 2  # Auto-set based on classification_mode: 3 for three_class, 2 for binary modes
+    
+    # Classification mode descriptions:
+    # three_class: AD vs MCI vs NC (three-class)
+    # binary_ad_nc: AD vs NC (remove MCI samples)
+    # binary_ad_mci: AD vs MCI (remove NC samples)  
+    # binary_mci_nc: MCI vs NC (remove AD samples)
+    
+  # EOEC dataset configuration (Eyes Open vs Eyes Closed resting state study)
+  EOEC:
+    num_regions: 116
+    num_classes: 2
+    x1_path: "x1_eoec.pt"
+    x2_path: "x2_o_eoec.pt"   
+
+# ============================================================================
+# Ablation study switches
+# ============================================================================
+ablation:
+  use_gin: true                  # Whether to use GIN network
+  use_brain3dcnn: true           # Whether to use 3D CNN
+  use_info_bottleneck: true      # Whether to use information bottleneck regularization
+
+# ============================================================================
+# Experiment settings
+# ============================================================================
+experiment:
+  save_model: true               # Whether to save model
+  use_wandb: false               # Whether to use wandb for experiment logging
+  seed: 42                       # Random seed
+  device: "auto"                 # Device selection (auto | cpu | cuda)
+  
+# ============================================================================
+# Data split configuration
+# ============================================================================
+data_split:
+  test_size: 0.1                 # Test set ratio
+  val_size: 0.2                  # Validation set ratio (split from training set)
+  stratify: true                 # Whether to use stratified sampling
+  random_state: 42               # Random state 
