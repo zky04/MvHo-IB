@@ -42,7 +42,8 @@ pip install torch-geometric
 Place your dataset files in the `data/` directory:
 - `x1_[dataset].pt`: First view data (e.g., functional connectivity)
 - `x2_o_[dataset].pt`: Second view data (e.g., higher-order interactions)
-
+- The way to preprocess datasate will coming soon...
+ 
 Example structure:
 ```
 data/
