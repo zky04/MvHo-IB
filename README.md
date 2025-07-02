@@ -1,6 +1,10 @@
 # MvHo-IB: Multi-View Higher-Order Information Bottleneck for Brain Disorder Diagnosis
 
+<div align="center">
+
 [English](README.md) | [中文](README_ch.md)
+
+</div>
 
 Code for "MvHo-IB: Multi-View Higher-Order Information Bottleneck for Brain Disorder Diagnosis", MICCAI-25.
 
