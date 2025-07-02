@@ -10,6 +10,12 @@ Code for "MvHo-IB: Multi-View Higher-Order Information Bottleneck for Brain Diso
 - **End-to-end Training**: Unified framework for simultaneous optimization of feature extraction and fusion from two views
 - **Flexible Configuration**: Supports multiple datasets and classification modes
 
+## 📋 Method Overview
+
+![MvHo-IB Framework Overview](images/ovreview.png)
+
+The MvHo-IB framework integrates two complementary views of brain connectivity data through a unified information bottleneck approach, enabling robust brain disorder diagnosis through multi-view learning.
+
 ## 📊 Supported Datasets
 
 - **UCLA**
@@ -35,6 +41,18 @@ pip install torch-geometric
 ## 🎯 Quick Start
 
 ### 1. Prepare Data
+Place your dataset files in the `data/` directory:
+- `x1_[dataset].pt`: First view data (e.g., functional connectivity)
+- `x2_o_[dataset].pt`: Second view data (e.g., higher-order interactions)
+
+Example structure:
+```
+data/
+├── x1_ucla.pt
+├── x2_o_ucla.pt
+├── x1_adni.pt
+└── x2_o_adni.pt
+```
 
 ### 2. Configure Experiment
 Edit `config.yaml` to set dataset and hyperparameters:
