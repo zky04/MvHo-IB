@@ -2,19 +2,11 @@
 
 Code for "MvHo-IB: Multi-View Higher-Order Information Bottleneck for Brain Disorder Diagnosis", MICCAI-25.
 
-## 🚀 Key Features
-
-- **Multi-view Learning**: Simultaneously leverages pairwise connections and higher-order interactions in brain networks
-- **Information Bottleneck Principle**: Improves model generalization through Rényi entropy regularization
-- **Higher-order Interaction Modeling**: Quantifies synergistic/redundant relationships among triplet brain regions using O-information
-- **End-to-end Training**: Unified framework for simultaneous optimization of feature extraction and fusion from two views
-- **Flexible Configuration**: Supports multiple datasets and classification modes
-
 ## 📋 Method Overview
 
 ![MvHo-IB Framework Overview](images/ovreview.png)
 
-The MvHo-IB framework integrates two complementary views of brain connectivity data through a unified information bottleneck approach, enabling robust brain disorder diagnosis through multi-view learning.
+Our MvHo-IB framework processes fMRI time series data extracted using the automated anatomical labeling (AAL) template. The pipeline estimates functional connectivity patterns and feeds them into a multi-view learning architecture. The framework learns a joint representation \(Z = f_{\theta}(Z_1, Z_2)\) by optimizing the information bottleneck objective: maximizing \(I(Y; Z)\) while minimizing \(I(X_1; Z_1) + I(X_2; Z_2)\). View 1 processes pairwise interactions through mutual information matrices, while View 2 captures higher-order triple interactions using \(\mathcal{O}\)-information 3D tensors.
 
 ## 📊 Supported Datasets
 
@@ -61,6 +53,11 @@ Edit `config.yaml` to set dataset and hyperparameters:
 ```bash
 python main.py
 ```
+### Brain3DCNN Architecture
+
+![Brain3DCNN Architecture](images/3DBrainCNN.png)
+
+The Brain3DCNN architecture processes brain network data through multiple specialized layers: E2E convolution for edge-level feature extraction, E2N filtering for region-wise aggregation, N2G layer for global integration, and fully connected layers for classification. This hierarchical design captures multi-scale brain connectivity patterns for accurate disorder diagnosis.
 
 ## 📁 Project Structure
 
