@@ -89,3 +89,19 @@ MvHo-IB/
 │       └── trainer.py          # Training logic
 └── experiments/         # Experimental results
 ```
+
+## 📝 Citation
+
+Please kindly cite our paper if you find this project helpful.
+
+```bibtex
+@misc{zhang2025mvhoibmultiviewhigherorderinformation,
+      title={MvHo-IB: Multi-View Higher-Order Information Bottleneck for Brain Disorder Diagnosis}, 
+      author={Kunyu Zhang and Qiang Li and Shujian Yu},
+      year={2025},
+      eprint={2507.02847},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2507.02847}, 
+}
+```

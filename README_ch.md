@@ -42,6 +42,7 @@ pip install torch-geometric
 将数据集文件放在 `data/` 目录中：
 - `x1_[dataset].pt`: 第一视图数据（如功能连接）
 - `x2_o_[dataset].pt`: 第二视图数据（如高阶交互）
+- 数据预处理方法即将推出...
 
 目录结构示例：
 ```
@@ -87,4 +88,20 @@ MvHo-IB/
 │   └── trainer/         # 训练器
 │       └── trainer.py          # 训练逻辑
 └── experiments/         # 实验结果
+```
+
+## 📝 引用
+
+如果这个项目对您有帮助，请引用我们的论文。
+
+```bibtex
+@misc{zhang2025mvhoibmultiviewhigherorderinformation,
+      title={MvHo-IB: Multi-View Higher-Order Information Bottleneck for Brain Disorder Diagnosis}, 
+      author={Kunyu Zhang and Qiang Li and Shujian Yu},
+      year={2025},
+      eprint={2507.02847},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2507.02847}, 
+}
 ```
