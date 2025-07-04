@@ -6,7 +6,7 @@
 
 </div>
 
-"MvHo-IB: Multi-View Higher-Order Information Bottleneck for Brain Disorder Diagnosis", MICCAI-25 的代码实现。
+"MvHo-IB: Multi-View Higher-Order Information Bottleneck for Brain Disorder Diagnosis(https://arxiv.org/pdf/2507.02847)", MICCAI-25 的代码实现。
 
 ## 📋 方法概述
 
